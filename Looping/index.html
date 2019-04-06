@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="Repeat">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="RepeatController">
+    <div>
+      <input type="text" ng-model="search">
+      </div>
+    <div>
+      <ul>
+        <li ng-repeat="members in familyNames|filter:search">{{$index + 1}}.{{members}}</li>
+        </ul>
+      </div>
+      <div>
+          <input type="text" ng-model="newFamilyMember">
+          <button ng-click="AddMember()">Add Family Member</button>
+          </div>
+  </body>
+</html>
